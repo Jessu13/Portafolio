@@ -54,7 +54,6 @@ header {
     min-height: 100vh;
     color: var(--color-white);
     overflow: hidden;
-    padding: 0 !important;
   }
   
 section {
@@ -77,11 +76,6 @@ section {
 }
 
 .sec3{
-    display: none;
-    transform: translateY(0) scale(1);
-}
-
-.sec4{
     display: none;
     transform: translateY(0) scale(1);
 }
@@ -224,6 +218,8 @@ section {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
         .about-item {
+            display: flex;
+            align-items: center;
             border: 1px solid var(--color-grey-5);
             border-radius: 5px;
             transition: all .4s ease-in-out;

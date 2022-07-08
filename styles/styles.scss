@@ -1,9 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
+html {
+
+    font-size: 62.5%;
     box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after {
+    box-sizing: inherit;
     list-style: none;
-  }
+}
 
   :root {
     --color-primary: #191d2b;
@@ -23,7 +29,7 @@
   
 .light-mode {
     --color-primary: #FFFFFF;
-    --color-secondary: #F56692;
+    --color-secondary: #FF8000;
     --color-white: #454e56;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -41,6 +47,9 @@ body {
     font-size: 1.1rem;
     color: var(--color-white);
     transition: all 0.4s ease-in-out;
+    &.body-scroll {
+        padding-top: 8.6rem;
+    }
   }
 
 a {
@@ -48,7 +57,11 @@ a {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
-  }
+}
+
+p{
+    font-size: 1.6rem;
+}
   
 header {
     min-height: 100vh;
@@ -62,7 +75,14 @@ section {
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 9rem;
+    padding: 3rem 20rem;
+}
+
+.section{
+    transform: translateY(-100%);
+    transition: all .4s ease-in-out;
+    background-color: var(--color-primary);
+    
 }
 
 .sec1{
@@ -124,7 +144,7 @@ section {
         margin: .7rem 0;
         box-shadow: var(--box-shadow-1) ;
         i {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             color: var(--color-grey-2);
             pointer-events: none;
         }
@@ -134,9 +154,9 @@ section {
 .theme-btn{
     top: 5%;
     right: 3%;
-    width: 60px;
     height: 60px;
-    border-radius: 50%;
+    width: 60px;
+    border-radius: 80%;
     cursor: pointer;
     position: fixed;
     display: flex;
@@ -178,11 +198,11 @@ section {
             border-radius: var(--br-sm-2);
             height: 90%;
             width: 68%;
-            margin-left: 4rem;
+            margin-left: 5rem;
             background-color: var(--color-black);
             transition: all .4s ease-in-out;
             img {
-                border-radius: .5rem;
+                border-radius: 1rem;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -200,7 +220,7 @@ section {
         justify-content: center;
         padding-right: 18rem;
         .name {
-            font-size: 3rem;
+            font-size: 3.5rem;
             span { color: var(--color-secondary); }
         }
         p {
@@ -243,10 +263,10 @@ section {
     .right-about {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 2rem;
+        grid-gap: 2.5rem;
         .about-item {
             border: 1px solid var(--color-grey-5);
-            border-radius: 5px;
+            border-radius: 1rem;
             transition: all .4s ease-in-out;
             box-shadow: 1px 2px 15px rgba(0,0,0,.1);
             display: flex;
@@ -258,11 +278,11 @@ section {
                 box-shadow: 1px 4px 15px rgba(0,0,0,.32);
             }
             .abt-text {
-                padding: 1.5rem;
+                padding: 2.5rem;
                 display: flex;
                 flex-direction: column;
                 .large-text {
-                    font-size: 3rem;
+                    font-size: 3.5rem;
                     font-weight: 700;
                     color: var(--color-secondary);
                 }
@@ -270,15 +290,15 @@ section {
                     padding-left: 3rem;
                     position: relative;
                     text-transform: uppercase;
-                    font-size: 1.2rem;
+                    font-size: 1.6rem;
                     color: var(--color-grey-1);
                     letter-spacing: 2px;
                     &::before {
                         content: '';
                         position: absolute;
-                        left: 0;
-                        top: 15px;
-                        width: 2rem;
+                        left: -15px;
+                        top: 10px;
+                        width: 4rem;
                         height: 2px;
                         background-color: var(--color-grey-5);
                     }
@@ -288,14 +308,14 @@ section {
     }
 
     .left-about {
-        padding-right: 2rem;
+        padding-right: 3rem;
         p {
             line-height: 2rem;
             padding: 1rem;
             color: var(--color-grey-1);
         }
         h4 {
-            font-size: 2rem;
+            font-size: 3rem;
             text-transform: uppercase;
         }
     }
@@ -351,7 +371,7 @@ section {
 
 .stat-title {
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 3.5rem 0;
     position: relative;
@@ -372,11 +392,11 @@ section {
 .timeline {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
-    padding-bottom: 3rem;
+    gap: 2.5rem;
+    padding-bottom: 3.5rem;
     .timeline-item{
         position: relative;
-        padding-left: 3rem;
+        padding-left: 3.5rem;
         border-left: 1px solid var(--color-grey-5);
         .tl-icon{
             position: absolute;
@@ -394,11 +414,11 @@ section {
             }
         }
         .tl-durantion{
-            padding: .2rem .6rem;
+            padding: .5rem 1rem;
             background-color: var(--color-grey-5);
             border-radius: 15px;
             display: inline-block;
-            font-size: .8rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
             font-weight: 500;
         }
@@ -427,17 +447,19 @@ section {
 
 .portfolios {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
     .portfolio-item {
         position: relative;
         border-radius: 15px;
         img {
+            max-width: 100%;
             width: 100%;
-            height: 300px;
+            height: auto;
+            display: block;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 20px;
         }
         .hover-items {
             width: 100%;
@@ -510,14 +532,17 @@ section {
     align-self: flex-start;
     align-items: center;
     overflow: hidden;
-    .btn-text { padding: 0 2rem; }
+    .btn-text { 
+        padding: 0 3rem; 
+        font-size: 1.5rem;
+    }
     .btn-icon {
         background-color: var(--color-secondary);
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        padding: 1rem;
+        padding: 1.6rem;
     }
     &::before {
         content: '';

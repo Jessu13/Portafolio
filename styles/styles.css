@@ -1,8 +1,13 @@
 @charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 62.5%;
   box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   list-style: none;
 }
 
@@ -24,7 +29,7 @@
 
 .light-mode {
   --color-primary: #FFFFFF;
-  --color-secondary: #F56692;
+  --color-secondary: #FF8000;
   --color-white: #454e56;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -43,12 +48,19 @@ body {
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
 }
+body.body-scroll {
+  padding-top: 8.6rem;
+}
 
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
   font-family: inherit;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 header {
@@ -63,7 +75,13 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 9rem;
+  padding: 3rem 20rem;
+}
+
+.section {
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+  background-color: var(--color-primary);
 }
 
 .sec1 {
@@ -135,7 +153,7 @@ section {
   box-shadow: var(--box-shadow-1);
 }
 .controls .control i {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: var(--color-grey-2);
   pointer-events: none;
 }
@@ -143,9 +161,9 @@ section {
 .theme-btn {
   top: 5%;
   right: 3%;
-  width: 60px;
   height: 60px;
-  border-radius: 50%;
+  width: 60px;
+  border-radius: 80%;
   cursor: pointer;
   position: fixed;
   display: flex;
@@ -190,12 +208,12 @@ section {
   border-radius: var(--br-sm-2);
   height: 90%;
   width: 68%;
-  margin-left: 4rem;
+  margin-left: 5rem;
   background-color: var(--color-black);
   transition: all 0.4s ease-in-out;
 }
 .header-content .left-header .image img {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -212,7 +230,7 @@ section {
   padding-right: 18rem;
 }
 .header-content .right-header .name {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
@@ -256,11 +274,11 @@ section {
 .about-container .right-about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 2.5rem;
 }
 .about-container .right-about .about-item {
   border: 1px solid var(--color-grey-5);
-  border-radius: 5px;
+  border-radius: 1rem;
   transition: all 0.4s ease-in-out;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -273,12 +291,12 @@ section {
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 }
 .about-container .right-about .about-item .abt-text {
-  padding: 1.5rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
 }
 .about-container .right-about .about-item .abt-text .large-text {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--color-secondary);
 }
@@ -286,21 +304,21 @@ section {
   padding-left: 3rem;
   position: relative;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: var(--color-grey-1);
   letter-spacing: 2px;
 }
 .about-container .right-about .about-item .abt-text .small-text::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 15px;
-  width: 2rem;
+  left: -15px;
+  top: 10px;
+  width: 4rem;
   height: 2px;
   background-color: var(--color-grey-5);
 }
 .about-container .left-about {
-  padding-right: 2rem;
+  padding-right: 3rem;
 }
 .about-container .left-about p {
   line-height: 2rem;
@@ -308,7 +326,7 @@ section {
   color: var(--color-grey-1);
 }
 .about-container .left-about h4 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
@@ -378,7 +396,7 @@ section {
 
 .stat-title {
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-align: center;
   padding: 3.5rem 0;
   position: relative;
@@ -398,12 +416,12 @@ section {
 .timeline {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding-bottom: 3rem;
+  gap: 2.5rem;
+  padding-bottom: 3.5rem;
 }
 .timeline .timeline-item {
   position: relative;
-  padding-left: 3rem;
+  padding-left: 3.5rem;
   border-left: 1px solid var(--color-grey-5);
 }
 .timeline .timeline-item .tl-icon {
@@ -422,11 +440,11 @@ section {
   font-size: 1.3rem;
 }
 .timeline .timeline-item .tl-durantion {
-  padding: 0.2rem 0.6rem;
+  padding: 0.5rem 1rem;
   background-color: var(--color-grey-5);
   border-radius: 15px;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -452,7 +470,7 @@ section {
 
 .portfolios {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
 }
@@ -461,11 +479,13 @@ section {
   border-radius: 15px;
 }
 .portfolios .portfolio-item img {
+  max-width: 100%;
   width: 100%;
-  height: 300px;
+  height: auto;
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .portfolios .portfolio-item .hover-items {
   width: 100%;
@@ -540,7 +560,8 @@ section {
   overflow: hidden;
 }
 .main-btn .btn-text {
-  padding: 0 2rem;
+  padding: 0 3rem;
+  font-size: 1.5rem;
 }
 .main-btn .btn-icon {
   background-color: var(--color-secondary);
@@ -548,7 +569,7 @@ section {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 1rem;
+  padding: 1.6rem;
 }
 .main-btn::before {
   content: "";
@@ -596,7 +617,7 @@ section {
   }
 
   .section {
-    padding: 2rem 4.5rem !important;
+    padding: 2rem 6rem !important;
   }
 
   .main-title h2 {
@@ -608,8 +629,13 @@ section {
   .main-title h2 .bg-text {
     font-size: 2.3rem;
   }
+
+  .theme-btn {
+    height: 40px !important;
+    width: 40px !important;
+  }
 }
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1120px) {
   section {
     padding: 3rem 18rem;
   }
@@ -637,7 +663,7 @@ section {
 }
 @media screen and (max-width: 970px) {
   .section {
-    padding: 7rem 6rem;
+    padding: 7rem 8rem;
   }
 
   header {
@@ -694,7 +720,7 @@ section {
 }
 @media screen and (max-width: 700px) {
   .section {
-    padding: 7rem 5rem;
+    padding: 7rem 8rem;
   }
 
   .about-stats .progress-bars {

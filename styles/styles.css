@@ -63,7 +63,7 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
+  padding: 3rem 9rem;
 }
 
 .sec1 {
@@ -114,6 +114,13 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
+.controls .active-btn {
+  background-color: var(--color-secondary) !important;
+  transition: all 0.4s ease-in-out;
+}
+.controls .active-btn i {
+  color: var(--color-white) !important;
+}
 .controls .control {
   padding: 1rem;
   cursor: pointer;
@@ -132,12 +139,28 @@ section {
   color: var(--color-grey-2);
   pointer-events: none;
 }
-.controls .active-btn {
-  background-color: var(--color-secondary);
-  transition: all 0.4s ease-in-out;
+
+.theme-btn {
+  top: 5%;
+  right: 3%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-in-out;
 }
-.controls .active-btn i {
-  color: var(--color-white);
+.theme-btn:active {
+  transform: translateY(-3px);
+}
+.theme-btn i {
+  font-size: 1.4rem;
+  color: var(--color-grey-2);
+  pointer-events: none;
 }
 
 /* header contenido */
@@ -236,12 +259,12 @@ section {
   grid-gap: 2rem;
 }
 .about-container .right-about .about-item {
-  display: flex;
-  align-items: center;
   border: 1px solid var(--color-grey-5);
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 .about-container .right-about .about-item:hover {
   cursor: default;
@@ -277,7 +300,7 @@ section {
   background-color: var(--color-grey-5);
 }
 .about-container .left-about {
-  padding-right: 5rem;
+  padding-right: 2rem;
 }
 .about-container .left-about p {
   line-height: 2rem;
@@ -398,7 +421,7 @@ section {
 .timeline .timeline-item .tl-icon i {
   font-size: 1.3rem;
 }
-.timeline .timeline-item .tl-icon .tl-durantion {
+.timeline .timeline-item .tl-durantion {
   padding: 0.2rem 0.6rem;
   background-color: var(--color-grey-5);
   border-radius: 15px;
@@ -407,18 +430,18 @@ section {
   text-transform: uppercase;
   font-weight: 500;
 }
-.timeline .timeline-item .tl-icon h5 {
+.timeline .timeline-item h5 {
   padding: 1rem 0;
   text-transform: uppercase;
   font-size: 1.3rem;
   font-weight: 600;
 }
-.timeline .timeline-item .tl-icon h5 span {
+.timeline .timeline-item h5 span {
   color: var(--color-grey-2);
   font-weight: 500;
   font-size: 1.2rem;
 }
-.timeline .timeline-item .tl-icon p {
+.timeline .timeline-item p {
   color: var(--color-grey-2);
 }
 
@@ -429,7 +452,7 @@ section {
 
 .portfolios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   margin-top: 3rem;
 }
@@ -442,7 +465,7 @@ section {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .portfolios .portfolio-item .hover-items {
   width: 100%;
@@ -573,7 +596,7 @@ section {
   }
 
   .section {
-    padding: 2rem 2.5rem !important;
+    padding: 2rem 4.5rem !important;
   }
 
   .main-title h2 {
@@ -587,6 +610,10 @@ section {
   }
 }
 @media screen and (max-width: 1070px) {
+  section {
+    padding: 3rem 18rem;
+  }
+
   .about-container {
     grid-template-columns: 1fr;
   }
@@ -667,7 +694,7 @@ section {
 }
 @media screen and (max-width: 700px) {
   .section {
-    padding: 7rem 3rem;
+    padding: 7rem 5rem;
   }
 
   .about-stats .progress-bars {
